@@ -1,8 +1,23 @@
-def info(message) {
-    echo "INFO: ${message}"
-}
+def call(String Component) {
+    pipeline {
+        agent any
 
-def warning(message) {
-    echo "WARNING: ${message}"
+        stages {
+            stage('compile') {
+                steps {
+                    sh 'echo Component = ${Component}'
+                }
+            }
+//            stage('code Quality') {
+//                steps {
+//                    sh 'echo Code Quality'
+//                }
+//            }
+//            stage('test case') {
+//                steps {
+//                    sh 'echo Test Cases'
+//                }
+//            }
+        }
+    }
 }
-
